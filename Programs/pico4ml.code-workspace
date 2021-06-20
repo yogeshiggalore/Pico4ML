@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"name": "Pico4ML_LED_Test",
+			"path": "Pico4ML_LED_Test"
+		},
+		{
+			"name": "Pico4ML_I2C_Scanner",
+			"path": "Pico4ML_I2C_Scanner"
+		},
+		{
+			"name": "Pico4ML_IMU_Test",
+			"path": "Pico4ML_IMU_Test"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"chrono": "cpp",
+			"algorithm": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"forward_list": "cpp",
+			"list": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"string_view": "cpp",
+			"initializer_list": "cpp"
+		}
+	}
+}
