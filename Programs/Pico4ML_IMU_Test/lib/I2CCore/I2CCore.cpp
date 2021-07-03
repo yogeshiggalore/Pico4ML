@@ -38,6 +38,7 @@ I2CCore::I2CCore(){}
 *******************************************************************************/
 void I2CCore::Start(void){
     Wire.begin();
+	Wire.setClock(100000);
 }
 
 /****************************************************************************** 
@@ -102,20 +103,20 @@ void I2CCore::Scanner(void){
 }
 
 /****************************************************************************** 
-* Function Name: Read_Single_Register
+* Function Name: Read_Single_Byte
 *******************************************************************************
 *
 * Summary:
-*  This function reads single register from I2C
+*  This function reads single Byte from I2C
 *
 * Parameters: 
-*  i2c address, register address 
+*  i2c address, Byte address 
 *
 * Return: 
-*  register value
+*  Byte value
 *  
 *******************************************************************************/
-uint8_t I2CCore::Read_Single_Register(uint8_t ui8i2CAdd, uint8_t ui8RegAdd){
+uint8_t I2CCore::Read_Single_Byte(uint8_t ui8i2CAdd, uint8_t ui8RegAdd){
 	Wire.beginTransmission(ui8i2CAdd);
 	Wire.write(ui8RegAdd);
 	Wire.endTransmission(false);
@@ -124,20 +125,20 @@ uint8_t I2CCore::Read_Single_Register(uint8_t ui8i2CAdd, uint8_t ui8RegAdd){
 }
 
 /****************************************************************************** 
-* Function Name: Read_Multiple_Registers
+* Function Name: Read_Multiple_Bytes
 *******************************************************************************
 *
 * Summary:
-*  This function reads multiple registers from I2C
+*  This function reads multiple Bytes from I2C
 *
 * Parameters: 
-*   i2c address, start address, number of register , buffer to store read registers
+*   i2c address, start address, number of Byte , buffer to store read Bytes
 *
 * Return: 
 *  None
 *  
 *******************************************************************************/
-void I2CCore::Read_Multiple_Registers(uint8_t ui8I2CAdd, uint8_t ui8StartRegAdd, uint8_t ui8NumberOfReg,uint8_t *pauiReadBuffer){
+void I2CCore::Read_Multiple_Bytes(uint8_t ui8I2CAdd, uint8_t ui8StartRegAdd, uint8_t ui8NumberOfReg,uint8_t *pauiReadBuffer){
 	uint8_t ui8LoopCounter=0;
 	Wire.beginTransmission(ui8I2CAdd);
 	Wire.write(ui8StartRegAdd);
@@ -149,20 +150,20 @@ void I2CCore::Read_Multiple_Registers(uint8_t ui8I2CAdd, uint8_t ui8StartRegAdd,
 }
 
 /****************************************************************************** 
-* Function Name: Write_Single_Register
+* Function Name: Write_Single_Byte
 *******************************************************************************
 *
 * Summary:
-*  This function write value to mentioned register
+*  This function write value to mentioned Byte
 *
 * Parameters: 
-*   i2caddress, register, value
+*   i2caddress, Byte, value
 *
 * Return: 
 *  None
 *  
 *******************************************************************************/
-void I2CCore::Write_Single_Register(uint8_t ui8I2CAdd, uint8_t ui8RegAdd, uint8_t ui8Value){
+void I2CCore::Write_Single_Byte(uint8_t ui8I2CAdd, uint8_t ui8RegAdd, uint8_t ui8Value){
 	Wire.beginTransmission(ui8I2CAdd);
 	Wire.write(ui8RegAdd);
 	Wire.write(ui8Value);
@@ -170,20 +171,20 @@ void I2CCore::Write_Single_Register(uint8_t ui8I2CAdd, uint8_t ui8RegAdd, uint8_
 }
 
 /****************************************************************************** 
-* Function Name: Write_Multiple_Registers
+* Function Name: Write_Multiple_Bytes
 *******************************************************************************
 *
 * Summary:
-*  This function writes multiple register to I2C
+*  This function writes multiple Byte to I2C
 *
 * Parameters: 
-*   i2caddress, register, value
+*   i2caddress, Byte, value
 *
 * Return: 
 *  None
 *  
 *******************************************************************************/
-void I2CCore::Write_Multiple_Registers(uint8_t ui8I2CAdd, uint8_t ui8StartRegAdd, uint8_t ui8NumberOfReg, uint8_t *paui8WriteBuffer) {
+void I2CCore::Write_Multiple_Bytes(uint8_t ui8I2CAdd, uint8_t ui8StartRegAdd, uint8_t ui8NumberOfReg, uint8_t *paui8WriteBuffer) {
 	Wire.beginTransmission(ui8I2CAdd);
   	Wire.write(ui8StartRegAdd);
   	Wire.write(paui8WriteBuffer, ui8NumberOfReg);

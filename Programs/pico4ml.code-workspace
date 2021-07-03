@@ -11,6 +11,10 @@
 		{
 			"name": "Pico4ML_IMU_Test",
 			"path": "Pico4ML_IMU_Test"
+		},
+		{
+			"name": "Pico4ML_LCD_Test",
+			"path": "Pico4ML_LCD_Test"
 		}
 	],
 	"settings": {
@@ -26,7 +30,11 @@
 			"unordered_set": "cpp",
 			"vector": "cpp",
 			"string_view": "cpp",
-			"initializer_list": "cpp"
+			"initializer_list": "cpp",
+			"memory": "cpp",
+			"random": "cpp",
+			"future": "cpp",
+			"optional": "cpp"
 		}
 	}
 }
